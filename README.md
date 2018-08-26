@@ -6,6 +6,14 @@
 
 #liri will then appendFile using node "fs" to log.txt file
 
+#required node packages > package.json run node i
+
+- request
+- spotify-node-api
+- moment
+- dotenv
+- fs
+
 1. node liri.js concert-this <artist/band name here>
   - This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
     * Name of the venue
