@@ -1,10 +1,10 @@
 # liri-node-app
 
-# liri accepts four commands
+#liri accepts four commands
 
-# liri will console.log data related to user search
+#liri will console.log data related to user search
 
-# liri will then appendFile using node "fs" to log.txt file
+#liri will then appendFile using node "fs" to log.txt file
 
 1. node liri.js concert-this <artist/band name here>
   - This will search the Bands in Town Artist Events API ("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp") for an artist and render the following information about each event to the terminal:
