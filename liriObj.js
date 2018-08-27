@@ -109,8 +109,8 @@ var liri_bot = {
       console.log(description + data);
       this.appendFile(description + data + "\n");
     },
-    appendFile: function() {
-      fs.appendFile(this.textFile, liri_bot.arg, function(err) {
+    appendFile: function(file) {
+      fs.appendFile(this.textFile, file, function(err) {
         if (err) {
           console.log(err);
         }
