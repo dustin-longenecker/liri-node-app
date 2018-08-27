@@ -5,17 +5,12 @@ var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var fs = require("fs");
 var moment = require("moment");
-
-//spotify constructor keys
 var spotify = new Spotify(keys.spotify);
-
 //command line agument variables
 var cmd = process.argv[2];
 var arg = process.argv.slice(3).join("+");
-
+var textFile = "log.txt";
 commandSwitch(cmd, arg);
-
-
 //main command switch statement function
 function commandSwitch(cmd, arg) {
   switch (cmd) {
@@ -102,7 +97,6 @@ function movieThis(arg) {
     }
   });
 }
-
 // do-what-it-says function
 function doWhatItSays() {
   fs.readFile("random.txt", "utf8", function(error, data) {
@@ -117,14 +111,13 @@ function doWhatItSays() {
     }
   });
 }
-//create log.txt file
-var textFile = "log.txt";
 // console.log / appendFile function
 function display(description, data) {
   console.log(description + data);
   appendFile(description + data + "\n");
 }
-function contentAdded(){
+
+function contentAdded() {
   console.log("");
   console.log("Content Added!");
   console.log("-----------------------------------");
@@ -135,9 +128,6 @@ function appendFile(arg) {
   fs.appendFile(textFile, arg, function(err) {
     if (err) {
       console.log(err);
-    }
-    else {
-      // console.log("Content Added!");
-    }
+    } else {}
   });
 }

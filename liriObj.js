@@ -5,24 +5,22 @@ var keys = require("./keys.js");
 var Spotify = require('node-spotify-api');
 var fs = require("fs");
 var moment = require("moment");
-
 //spotify constructor keys
 var spotify = new Spotify(keys.spotify);
-
 var liri_bot = {
   cmd: process.argv[2],
   arg: process.argv.slice(3).join("+"),
   textFile: "log.txt",
   switchCmd: function() {
-    switch (this.cmd) {
+    switch (liri_bot.cmd) {
       case 'concert-this':
-        this.concertThis(this.arg);
+        this.concertThis(liri_bot.arg);
         break;
       case 'spotify-this-song':
-        this.spotifyThis(this.arg);
+        this.spotifyThis(liri_bot.arg);
         break;
       case 'movie-this':
-        this.movieThis(this.arg);
+        this.movieThis(liri_bot.arg);
         break;
       case 'do-what-it-says':
         this.doWhatItSays();
@@ -112,7 +110,7 @@ var liri_bot = {
       this.appendFile(description + data + "\n");
     },
     appendFile: function() {
-      fs.appendFile(this.textFile, this.arg, function(err) {
+      fs.appendFile(this.textFile, liri_bot.arg, function(err) {
         if (err) {
           console.log(err);
         }
