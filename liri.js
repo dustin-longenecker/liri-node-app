@@ -120,7 +120,7 @@ function display(description, data) {
 function contentAdded() {
   console.log("");
   console.log("Content Added!");
-  console.log("-----------------------------------");
+  console.log("-----------------------------------\n");
   appendFile("-----------------------------------\n");
 }
 //appendFile function
